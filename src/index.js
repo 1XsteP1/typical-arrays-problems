@@ -1,8 +1,8 @@
 exports.min = function min (array) {
-  if (array == undefined || array.length == 0) {
-   return 0
+  if (array == undefined || array.length == 0){
+    return 0;
   } else {
-   return Math.min(...array)
+    return Math.min(...array);
   }
 }
 
@@ -19,19 +19,14 @@ exports.max = function max (array) {
    return 0
   }
 
+  let sum = 0;
   let average = 0;
 
-   let comp = (a,b) => {
-   if (a > b) return 1
-   if (a == b) return 0
-   if (a < b) return -1
+  for (let i = 0; i < array.length; i++){
+    sum += array[i];
   }
 
-   array.sort(comp)
+  average = sum / array.length;
 
-   for (let i in array) {
-   average += array[i]
-  }
-
-   return average / array.length
+  return average;
 }
